@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <h2> {{ title }}</h2>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <form class="form-login" [formGroup]="_compressorGroup" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="input">Input String</label>
+          <input type="text" class="form-control" id="input" placeholder="Enter input string" formControlName="_input">
+        </div>
+        <div class="form-group">
+          <label for="compressed">Compressed string</label>
+          <input type="text" class="form-control" id="compressed" placeholder="compressed text" [value]="_compressed" disabled>
+        </div>
+        <div class="form-group">
+          <label for="decompressed">Decompressed string</label>
+          <input type="text" class="form-control" id="decompressed" placeholder="decompressed text" formControlName="_decompressed">
+        </div>
+        <div class="form-check">
+          <button type="button" class="btn btn-primary" (click)="getCompressed()" >Compress</button>
+          <button type="button" class="btn btn-primary"  (click)="getDeCompressed()">Decompress</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
